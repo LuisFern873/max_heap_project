@@ -1,3 +1,4 @@
+import 'dart:io';
 
 int left(int i) => 2*i + 1;
 int right(int i) => 2*i + 2;
@@ -63,5 +64,14 @@ void buildMaxHeap(List<int> A)
 
   for (int i = startIndex; i >= 0; i--) {
     maxHeapify(A, i);
+  }
+}
+
+void heapSort(List<int> A)
+{
+  buildMaxHeap(A);
+  while (A.isNotEmpty) {
+    int max = maxHeapExtractMax(A);
+    stdout.write("$max ");
   }
 }
