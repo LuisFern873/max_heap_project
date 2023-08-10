@@ -2,8 +2,7 @@ import 'dart:io';
 
 int left(int i) => 2*i + 1;
 int right(int i) => 2*i + 2;
-int parent(int i) => ((i - 1)/2).floor();
-
+int parent(int i) => ((i - 1) / 2).floor();
 
 int maxHeapMaximum(List<int> A)
 {
@@ -13,6 +12,7 @@ int maxHeapMaximum(List<int> A)
   return A[0];
 }
 
+// O(lgn)
 void maxHeapify(List<int> A, int i) {
   // print("maxHeapify($A, $i)");
 
@@ -58,6 +58,7 @@ int maxHeapExtractMax(List<int> A)
   return max;
 }
 
+// O(n)
 void buildMaxHeap(List<int> A)
 {
   int startIndex = (A.length / 2).floor() - 1;
@@ -67,6 +68,7 @@ void buildMaxHeap(List<int> A)
   }
 }
 
+// O(nlgn)
 void heapSort(List<int> A)
 {
   buildMaxHeap(A);
